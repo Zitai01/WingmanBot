@@ -1,0 +1,2 @@
+# WingmanBot
+A discord bot
