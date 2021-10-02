@@ -1,5 +1,6 @@
 // Require the necessary discord.js classes
 const { Client, Intents } = require('discord.js')
+const express = require('./express')
 require('dotenv').config()
 
 const token = process.env.DISCORD_BOT_TOKEN
@@ -19,7 +20,11 @@ client.on('message', (message) => {
   if (message.author.bot) return
   console.log(`${message.author}`)
   if (message.content === 'hello') {
-    message.channel.send('hello there')
+    if (express.getName()) {
+      message.channel.send(`hello ${express.getName()}`)
+    } else {
+      message.channel.send('hello there')
+    }
   }
 })
 // Login to Discord with your client's token
