@@ -1,6 +1,7 @@
 // Require the necessary discord.js classes
 const { Client, Intents } = require('discord.js')
-const express = require('express')
+const express = require('../express')
+
 require('dotenv').config()
 
 const token = process.env.DISCORD_BOT_TOKEN
